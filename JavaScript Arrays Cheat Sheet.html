@@ -1,0 +1,1938 @@
+<!------------
+
+-----------------------------------------------JavaScript Arrays Cheat Sheet-----------------------------------------------<br>
+
+===========================================================================================================================<br>
+mikeSage(){<br>
+	       <br>
+};         <br>
+===========================================================================================================================<br>
+
+JavaScript arrays are used to store multiple values in a single variable.<br>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p id="demo"></p>
+
+<script>
+var cars = ["Honda", "Tesla", "Nissan"];
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+=================================================What is an Array?=================================================
+An array is a special variable, which can hold more than one value at a time.<br>
+If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:<br>
+
+var car1 = "Honda";
+var car2 = "Tesla";
+var car3 = "Nissan";
+
+However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300
+The solution is an array!
+An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+================================================Creating an Array================================================
+Using an array literal is the easiest way to create a JavaScript Array.
+Syntax:
+var array_name = [item1, item2, ...]; 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["Honda", "Tesla", "Nissan"];
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+Note: Spaces and line breaks are not important. A declaration can span multiple lines:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+<script>
+var cars = [
+             "Honda", 
+              "Tesla", 
+              "Nissan"
+              ];
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+Note: Putting a comma after the last element (like "BMW",)  is inconsistent across browsers.
+IE 8 and earlier will fail.
+
+============================================== Using the JavaScript Keyword new ==============================================<br>
+The following example also creates an Array, and assigns values to it:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+var cars = new Array("Honda", "Tesla", "Nissan");
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+Note: The two examples above do exactly the same. There is no need to use new Array().
+For simplicity, readability and execution speed, use the first one (the array literal method).
+
+============================================== Access the Elements of an Array =================================================<br>
+You access an array element by referring to the index number.
+This statement accesses the value of the first element in cars:
+
+var name = cars[0];
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+
+<p>JavaScript array elements are accessed using numeric indexes (starting from 0).</p>
+<p id="demo"></p>
+<script>
+var cars = ["Honda", "Tesla", "Nissan"];
+document.getElementById("demo").innerHTML = cars[0];
+</script>
+</body>
+</html>
+
+Note: Array indexes start with 0.
+[0] is the first element. [1] is the second element.
+
+
+============================================== Changing an Array Element =================================================<br>
+This statement changes the value of the first element in cars:
+
+cars[0] = "Opel";
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+<p>JavaScript array elements are accessed using numeric indexes (starting from 0).</p>
+<p id="demo"></p>
+<script>
+var cars = ["Honda", "Tesla", "Nissan"];
+cars[0] = "Opel";
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+============================================== Access the Full Array =================================================<br>
+With JavaScript, the full array can be accessed by referring to the array name:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p id="demo"></p>
+<script>
+var cars = ["Honda", "Tesla", "Nissan"];
+document.getElementById("demo").innerHTML = cars;
+</script>
+</body>
+</html>
+
+============================================== Arrays are Objects =================================================<br>
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+But, JavaScript arrays are best described as arrays.
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p>Arrays use numbers to access its elements.</p>
+<p id="demo"></p>
+<script>
+var person = ["John", "Doe", 46];
+document.getElementById("demo").innerHTML = person[0];
+</script>
+</body>
+</html>
+
+Note: Objects use names to access its "members". In this example, person.firstName returns John:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>JavaScript uses names to access object properties.</p>
+<p id="demo"></p>
+
+<script>
+var person = {
+	           firstName:"John", 
+	           lastName:"Doe", 
+	           age:46
+             };
+document.getElementById("demo").innerHTML = person["firstName"];
+</script>
+
+</body>
+</html>
+
+==============================================  Array Elements Can Be Objects ==============================================<br>
+JavaScript variables can be objects. Arrays are special kinds of objects.
+
+Because of this, you can have variables of different types in the same Array.
+
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:  
+
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars; 
+
+
+==============================================  Array Properties and Methods ==============================================<br>
+The real strength of JavaScript arrays are the built-in array properties and methods:
+Examples
+var x = cars.length;   // The length property returns the number of elements
+var y = cars.sort();   // The sort() method sorts arrays
+
+==============================================  The length Property ==============================================<br>
+The length property of an array returns the length of an array (the number of array elements).
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+<p>The length property returns the length of an array.</p>
+
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.length;
+</script>
+</body>
+</html>
+
+Note: The length property is always one more than the highest array index.
+
+==============================================  Accessing the First Array Element ==============================================<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var first = fruits[0];
+document.getElementById("demo").innerHTML = first;
+</script>
+</body>
+</html>
+
+==============================================  Accessing the Last Array Element ==============================================<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var last = fruits[fruits.length-1];
+document.getElementById("demo").innerHTML = last;
+</script>
+</body>
+</html>
+
+==============================================  Looping Array Elements ==============================================<br>
+The safest way to loop through an array, is using a for loop:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>
+
+===================================  You can also use the Array.forEach() function:================================<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Array.forEach() calls a function for each array element.</p>
+
+<p>Array.forEach() is not supported in Internet Explorer 8 or earlier.</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+} 
+</script>
+
+</body>
+</html>
+
+===================================================== Adding Array Elements  ==================================================<br>
+The easiest way to add a new element to an array is using the push() method:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The push method appends a new element to an array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push("Lemon");
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+================ New element can also be added to an array using the length property: ============<br>
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+
+<p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits[fruits.length] = "Lemon";
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+Note: WARNING !
+Adding elements with high indexes can create undefined "holes" in an array:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Adding elements with high indexes can create undefined "holes" in an array.</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[6] = "Lemon";
+
+fLen = fruits.length;
+text = "";
+for (i = 0; i < fLen; i++) {
+  text += fruits[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>
+
+===================================================== Associative Arrays  ==================================================<br>
+Many programming languages support arrays with named indexes.
+Arrays with named indexes are called associative arrays (or hashes).
+JavaScript does not support arrays with named indexes. 
+In JavaScript, arrays always use numbered indexes. 
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+<script>
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46; 
+document.getElementById("demo").innerHTML =
+person[0] + " " + person.length;
+</script>
+</body>
+</html>
+
+Note: WARNING !!
+If you use named indexes, JavaScript will redefine the array to a standard object.
+After that, some array methods and properties will produce incorrect results.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>If you use a named index when accessing an array, JavaScript will redefine the array to a standard object, and some array methods and properties will produce undefined or incorrect results.</p>
+
+<p id="demo"></p>
+
+<script>
+var person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46; 
+document.getElementById("demo").innerHTML =
+person[0] + " " + person.length;
+</script>
+
+</body>
+</html>
+
+======================================== The Difference Between Arrays and Objects ========================================<br>
+In JavaScript, arrays use numbered indexes.  
+In JavaScript, objects use named indexes.
+Arrays are a special kind of objects, with numbered indexes.
+
+======================================== When to Use Arrays. When to use Objects. ========================================<br>
+
+JavaScript does not support associative arrays.
+You should use objects when you want the element names to be strings (text).
+You should use arrays when you want the element names to be numbers.
+
+======================================== Avoid new Array() ========================================<br>
+There is no need to use the JavaScript's built-in array constructor new Array().
+
+Use [] instead.
+These two different statements both create a new empty array named points:
+
+var points = new Array();     // Bad
+var points = [];              // Good 
+
+These two different statements both create a new array containing 6 numbers:
+
+var points = new Array(40, 100, 1, 5, 25, 10); // Bad
+var points = [40, 100, 1, 5, 25, 10];          // Good
+
+=========== The new keyword only complicates the code. It can also produce some unexpected results: ================================
+
+var points = new Array(40, 100);  // Creates an array with two elements (40 and 100)
+
+======================================== What if I remove one of the elements? ========================================
+
+var points = new Array(40);  // Creates an array with 40 undefined elements !!!!!
+
+==============================================    How to Recognize an Array  ==================================================
+A common question is: How do I know if a variable is an array?
+
+The problem is that the JavaScript operator typeof returns "object":
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+<p>The typeof operator, when used on an array, returns object:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = typeof fruits;
+</script>
+
+</body>
+</html>
+
+The typeof operator returns object because a JavaScript array is an object.
+
+----------------------------------Solution 1:-------------------------------------------<br>
+To solve this problem ECMAScript 5 defines a new method Array.isArray():
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The new ECMASCRIPT 5 method isArray returns true when used on an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = Array.isArray(fruits);
+</script>
+
+</body>
+</html>
+
+The problem with this solution is that ECMAScript 5 is not supported in older browsers.
+
+----------------------------------------- Solution 2: -----------------------------------------<br>
+To solve this problem you can create your own isArray() function:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>This "home made" isArray() function returns true when used on an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = isArray(fruits);
+
+function isArray(myArray) {
+  return myArray.constructor.toString().indexOf("Array") > -1;
+}
+</script>
+
+</body>
+</html>
+
+The function above always returns true if the argument is an array.
+
+Or more precisely: it returns true if the object prototype contains the word "Array".
+
+----------------------------------------- Solution 3: -----------------------------------------<br>
+The instanceof operator returns true if an object is created by a given constructor:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Arrays</h2>
+
+<p>The instanceof operator returns true when used on an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits instanceof Array;
+</script>
+</body>
+</html>
+
+==============================================  JavaScript Array Methods ==============================================<br>
+
+Converting Arrays to Strings<br>
+The JavaScript method toString() converts an array to a string of (comma separated) array values.<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>toString()</h2>
+
+<p>The toString() method returns an array as a comma separated string:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+</script>
+</body>
+</html>
+
+The join() method also joins all array elements into a string.
+
+It behaves just like toString(), but in addition you can specify the separator:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>join()</h2>
+
+<p>The join() method joins array elements into a string.</p>
+
+<p>It this example we have used " * " as a separator between the elements:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+</script>
+
+</body>
+</html>
+
+============================================= Popping and Pushing ============================================= <br>
+When you work with arrays, it is easy to remove elements and add new elements. <br>
+This is what popping and pushing is:<br>
+Popping items out of an array, or pushing items into an array.<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Methods</h2>
+<h2>pop()</h2>
+<p>The pop() method removes the last element from an array.</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.pop();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+</body>
+</html>
+
+================================= The pop() method returns the value that was "popped out": =================================<br>
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.pop();      // the value of x is "Mango"
+
+======================================================== Pushing ======================================================== <br>
+The push() method adds a new element to an array (at the end):
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>push()</h2>
+
+<p>The push() method appends a new element to an array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push("Kiwi");
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+==================================== The push() method returns the new array length: ======================================== <br>
+The push() method returns the new array length:
+
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.push("Kiwi");   //  the value of x is 5
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>push()</h2>
+
+<p>The push() method returns the new array length.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+
+function myFunction() {
+  document.getElementById("demo2").innerHTML = fruits.push("Kiwi");
+  document.getElementById("demo1").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+================================================ Shifting Elements ================================================<br>
+Shifting is equivalent to popping, working on the first element instead of the last.
+The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>shift()</h2>
+
+<p>The shift() method removes the first element of an array (and "shifts" all other elements to the left):</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.shift();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+
+</body>
+</html>
+
+===================================  The shift() method returns the string that was "shifted out": =============================<br>
+
+Example
+<script>
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var x = fruits.shift();    // the value of x is "Banana"
+</script>
+
+========== The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements: ==========<br>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>unshift()</h2>
+<p>The unshift() method adds new elements to the beginning of an array.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.unshift("Lemon");
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+=====================================  The unshift() method returns the new array length. =====================================<br>
+Example
+<script>
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Returns 5
+
+</script>
+
+=============================================== Changing Elements ===============================================<br>
+Array elements are accessed using their index number:
+Array indexes start with 0. [0] is the first array element, [1] is the second, [2] is the third ...
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Methods</h2>
+<p>Array elements are accessed using their index number:</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits[1] = "Kiwi";
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+</body>
+</html>
+
+======================== The length property provides an easy way to append a new element to an array: ========================<br>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+<p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits[fruits.length] = "Kiwi";
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+================================================= Deleting Elements =================================================<br>
+Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Methods</h2>
+<p>Deleting elements leaves undefined holes in an array.</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML =
+"The first fruit is: " + fruits[0];
+delete fruits[0];
+document.getElementById("demo2").innerHTML =
+"The first fruit is: " + fruits[0];
+</script>
+
+</body>
+</html>
+
+====================== Using delete may leave undefined holes in the array. Use pop() or shift() instead. ==================
+
+============================================== Splicing an Array ==============================================<br>
+
+The splice() method can be used to add new items to an array:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>splice()</h2>
+
+<p>The splice() method adds new elements to an array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br>" + fruits;
+function myFunction() {
+  fruits.splice(2, 0, "Lemon", "Kiwi");
+  document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+}
+</script>
+</body>
+</html>
+
+
+The first parameter (2) defines the position where new elements should be added (spliced in).
+The second parameter (0) defines how many elements should be removed.
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+The splice() method returns an array with the deleted items:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>splice()</h2>
+
+<p>The splice() method adds new elements to an array, and returns an array with the deleted elements (if any).</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + fruits;
+
+function myFunction() {
+  var removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+  document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+  document.getElementById("demo3").innerHTML = "Removed Items:<br> " + removed; 
+}
+</script>
+</body>
+</html>
+
+==============================================  Using splice() to Remove Elements =============================================
+With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>splice()</h2>
+<p>The splice() methods can be used to remove array elements.</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+function myFunction() {
+  fruits.splice(0, 1);
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html>
+
+The first parameter (0) defines the position where new elements should be added (spliced in).
+The second parameter (1) defines how many elements should be removed.
+The rest of the parameters are omitted. No new elements will be added.
+
+=========================================== Merging (Concatenating) Arrays ====================================================<br>
+The concat() method creates a new array by merging (concatenating) existing arrays:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>concat()</h2>
+
+<p>The concat() method is used to merge (concatenate) arrays:</p>
+
+<p id="demo"></p>
+
+<script>
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);
+
+document.getElementById("demo").innerHTML = myChildren;
+</script>
+</body>
+</html>
+
+----------------Note: The concat() method does not change the existing arrays. It always returns a new array.<br>
+The concat() method can take any number of array arguments:
+
+var arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias", "Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3
+
+
+----------------------The concat() method can also take values as arguments:<br>
+
+Example (Merging an Array with Values)
+var arr1 = ["Cecilie", "Lone"];
+var myChildren = arr1.concat(["Emil", "Tobias", "Linus"]); 
+
+=================================================== Slicing an Array ===================================================<br>>
+The slice() method slices out a piece of an array into a new array.
+This example slices out a part of an array starting from array element 1 ("Orange"): 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>slice()</h2>
+
+<p>This example slices out a part of an array starting from array element 1 ("Orange"):</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1);
+document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+</script>
+</body>
+</html>
+
+Note: The slice() method creates a new array. It does not remove any elements from the source array.
+
+This example slices out a part of an array starting from array element 3 ("Apple"):
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>slice()</h2>
+
+<p>This  example slices out a part of an array starting from array element 3 ("Apple")</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(3);
+document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+</script>
+
+</body>
+</html>
+
+Note: The slice() method can take two arguments like slice(1, 3).
+
+The method then selects elements from the start argument, and up to (but not including) the end argument.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Methods</h2> 
+<h2>slice()</h2>
+<p>When the slice() method is given two arguments, it selects array elements from the start argument, and up to (but not included) the end argument:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1,3);
+document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+</script>
+</body>
+</html>
+
+Note: If the end argument is omitted, like in the first examples, the slice() method slices out the rest of the array.
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>slice()</h2>
+
+<p>This example slices out a part of an array starting from array element 2 ("Lemon"):</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(2);
+document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+</script>
+
+</body>
+</html>
+
+==================================================== Automatic toString() ====================================================<br>
+JavaScript automatically converts an array to a comma separated string when a primitive value is expected.
+This is always the case when you try to output an array.
+These two examples will produce the same result:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+<h2>toString()</h2>
+<p>The toString() method returns an array as a comma separated string:</p>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+</script>
+</body>
+</html>
+==================================================== Example 2 =========================================================== <br>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<p>JavaScript automatically converts an array to a comma separated string when a simple value is expected:</p>
+
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+</script>
+</body>
+</html>
+
+
+Note: All JavaScript objects have a toString() method.
+
+======================================== Finding Max and Min Values in an Array ==========================================<br>
+There are no built-in functions for finding the highest or lowest value in a JavaScript array.
+
+===================================================== JavaScript Sorting Arrays ===============================================<br>
+
+
+=================================================== Sorting an Array ===================================================<br>
+The sort() method sorts an array alphabetically:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>The sort() method sorts an array alphabetically.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.sort();
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html>
+
+=================================================== Reversing an Array  ===================================================<br>
+
+The reverse() method reverses the elements in an array.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort Reverse</h2>
+
+<p>The reverse() method reverses the elements in an array.</p>
+<p>By combining sort() and reverse() you can sort an array in descending order.</p>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+// Create and display an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  // First sort the array
+  fruits.sort();
+  // Then reverse it:
+  fruits.reverse();
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+</body>
+</html>
+
+You can use it to sort an array in descending order:
+
+================================================ Numeric Sort =============================================<br>
+By default, the sort() function sorts values as strings.
+This works well for strings ("Apple" comes before "Banana").
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+You can fix this by providing a compare function:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Sort</h2>
+<p>Click the button to sort the array in ascending order.</p>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){
+               return a - b
+                   });
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+</body>
+</html>
+
+=================================== Use the same trick to sort an array descending: ==========================================<br>
+
+Example
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+
+==================================== The Compare Function ==============================<br>>
+The purpose of the compare function is to define an alternative sort order.
+
+The compare function should return a negative, zero, or positive value, depending on the arguments:
+
+function(a, b){return a - b}
+
+If the result is negative a is sorted before b.
+If the result is positive b is sorted before a.
+If the result is 0 no changes is done with the sort order of the two values.
+
+--------------------------------- Example: ---------------------------<br>>
+The compare function compares all the values in the array, two values at the time (a, b).
+When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.
+You can use this code snippet to experiment with numerically and alphabetically sorting:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction1() {
+  points.sort();
+  document.getElementById("demo").innerHTML = points;
+}
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+</body>
+</html>
+
+=======================================  Sorting an Array in Random Order ===================================================<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the button (again and again) to sort the array in random order.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return 0.5 - Math.random()});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+</body>
+</html>
+
+========================================= Find the Highest (or Lowest) Array Value  ===========================================<br>
+
+There are no built-in functions for finding the max or min value in an array.
+However, after you have sorted an array, you can use the index to obtain the highest and lowest values.
+
+Sorting ascending:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Sort</h2>
+<p>The lowest number is <span id="demo"></span>.</p>
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a-b});
+document.getElementById("demo").innerHTML = points[0];
+</script>
+</body>
+</html>
+
+============================================= Sorting descending: =============================================<br>
+
+Example
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+// now points[0] contains the highest value
+// and points[points.length-1] contains the lowest value
+</script> 
+
+Note: Sorting a whole array is a very inefficient method if you only want to find the highest (or lowest) value.
+
+
+===========================================  Using Math.max() on an Array ============================================<br>
+You can use Math.max.apply to find the highest number in an array:
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Sort</h2>
+<p>The highest number is <span id="demo"></span>.</p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+</script>
+</body>
+</html>
+
+Note: Math.max.apply(null, [1, 2, 3]) is equivalent to Math.max(1, 2, 3).
+
+=============================================== Using Math.min() on an Array =============================================<br>
+You can use Math.min.apply to find the lowest number in an array:
+
+Example
+<script>
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+</script>
+
+Note: Math.min.apply(null, [1, 2, 3]) is equivalent to Math.min(1, 2, 3).
+
+=============================================== My Min / Max JavaScript Methods =============================================<br>
+The fastest solution is to use a "home made" method.
+This function loops through an array comparing each value with the highest value found:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array Sort</h2>
+<p>The highest number is <span id="demo"></span>.</p>
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+</script>
+</body>
+</html>
+
+Note: This function loops through an array comparing each value with the lowest value found:
+
+Example (Find Min)
+<script> 
+function myArrayMin(arr) {
+  var len = arr.length
+  var min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+</script>
+
+=========================================== Sorting Object Arrays  ======================================<br>
+JavaScript arrays often contain objects:
+
+Example
+<script> 
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+</script>
+
+Even if objects have properties of different data types, the sort() method can be used to sort the array.<br>
+The solution is to write a compare function to compare the property values:<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the buttons to sort car objects on age.</p>
+
+<button onclick="myFunction()">Sort</button>
+
+<p id="demo"></p>
+
+<script>
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+function myFunction() {
+  cars.sort(function(a, b){return a.year - b.year});
+  displayCars();
+}
+
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
+</body>
+</html>
+
+================================= Comparing string properties is a little more complex: =====================================<br>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the buttons to sort car objects on type.</p>
+
+<button onclick="myFunction()">Sort</button>
+
+<p id="demo"></p>
+
+<script>
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+function myFunction() {
+  cars.sort(function(a, b){
+    var x = a.type.toLowerCase();
+    var y = b.type.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+  displayCars();
+}
+
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
+</body>
+</html>
+
+
+========================================== JavaScript Array Iteration Methods =======================================<br>
+Array iteration methods operate on every array item.
+
+==================================================   Array.forEach() ================================================<br>
+The forEach() method calls a function (a callback function) once for each array element.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.forEach()</h2>
+
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt = txt + value + "<br>"; 
+}
+</script>
+
+</body>
+</html>
+
+Note that the function takes 3 arguments:
+
+1. The item value
+2. The item index
+3. The array itself
+The example above uses only the value parameter. The example can be rewritten to:
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.forEach()</h2>
+
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value) {
+  txt = txt + value + "<br>"; 
+}
+</script>
+
+</body>
+</html>
+
+==================================================== Array.map() =================================================<br>
+The map() method creates a new array by performing a function on each array element.
+The map() method does not execute the function for array elements without values.
+The map() method does not change the original array.
+This example multiplies each array value by 2:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.map()</h2>
+
+<p>Creates a new array by performing a function on each array element.</p>
+<p id="demo"></p>
+<script>
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+document.getElementById("demo").innerHTML = numbers2;
+function myFunction(value, index, array) {
+  return value * 2;
+}
+</script>
+</body>
+</html>
+
+Note: Array.map() is supported in all browsers except Internet Explorer 8 or earlier.
+
+=================================================== Array.filter() ===================================================<br>
+The filter() method creates a new array with array elements that passes a test.
+This example creates a new array from elements with a value larger than 18:
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array.filter()</h2>
+<p>Creates a new array with all array elements that passes a test.</p>
+<p id="demo"></p>
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+document.getElementById("demo").innerHTML = over18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+</body>
+</html>
+
+Note: that the function takes 3 arguments:
+
+1. The item value
+2. The item index
+3. The array itself
+In the example above, the callback function does not use the index and array parameters, so they can be omitted:
+Example
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value) {
+  return value > 18;
+}
+</script>
+
+
+================================================= Array.reduce() ================================================<br>
+
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+The reduce() method works from left-to-right in the array. See also reduceRight().
+The reduce() method does not reduce the original array.
+This example finds the sum of all numbers in an array:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array.reduce()</h2>
+
+<p>This example finds the sum of all numbers in an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var sum = numbers.reduce(myFunction);
+document.getElementById("demo").innerHTML = "The sum is " + sum;
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+</script>
+</body>
+</html>
+
+Note that the function takes 4 arguments:
+
+1. The total (the initial value / previously returned value)
+2. The item value
+3. The item index
+4. The array itself
+The example above does not use the index and array parameters. It can be rewritten to:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.reduce()</h2>
+
+<p>This example finds the sum of all numbers in an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [88, 3, 5, 49, 12];
+var sum = numbers.reduce(myFunction);
+
+document.getElementById("demo").innerHTML = "The sum is " + sum;
+
+function myFunction(total, value) {
+  return total + value;
+}
+</script>
+</body>
+</html>
+
+Note: Array.reduce() is supported in all browsers except Internet Explorer 8 or earlier.
+
+==============================================  Array.reduceRight()  ===========================================<br>
+The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+The reduceRight() works from right-to-left in the array. See also reduce().
+The reduceRight() method does not reduce the original array.
+This example finds the sum of all numbers in an array:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array.reduceRight()</h2>
+<p>This example finds the sum of all numbers in an array:</p>
+<p id="demo"></p>
+<script>
+var numbers = [88, 3, 5, 49, 12];
+var sum = numbers.reduceRight(myFunction);
+document.getElementById("demo").innerHTML = "The sum is " + sum;
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+</script>
+</body>
+</html>
+
+Note: that the function takes 4 arguments:
+
+1. The total (the initial value / previously returned value)
+2. The item value
+3. The item index
+4. The array itself
+The example above does not use the index and array parameters. It can be rewritten to:
+
+Example
+<script > 
+var numbers1 = [88, 3, 5, 49, 12];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+</script>
+
+Array.reduceRight() is supported in all browsers except Internet Explorer 8 or earlier.
+
+============================================= Array.every() =============================================<br>
+The every() method check if all array values pass a test.
+This example check if all array values are larger than 18:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.every()</h2>
+
+<p>The every() method checks if all array values pass a test.</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+document.getElementById("demo").innerHTML = "All over 18 is " + allOver18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+</body>
+</html>
+
+Note that the function takes 3 arguments:
+1. The item value
+2. The item index
+3. The array itself
+4. When a callback function uses the first parameter only (value), the other parameters can be omitted:
+
+Example
+<script> 
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+function myFunction(value) {
+  return value > 18;
+}
+</script>
+
+Array.every() is supported in all browsers except Internet Explorer 8 or earlier.<br>
+
+============================================ Array.some() =============================================<br>
+The some() method check if some array values pass a test.<br>
+This example check if some array values are larger than 18:<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array.some()</h2>
+
+<p>The some() method checks if some array values pass a test.</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+document.getElementById("demo").innerHTML = "Some over 18 is " + someOver18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+</body>
+</html>
+
+Note that the function takes 3 arguments:
+
+1. The item value
+2. The item index
+3. The array itself
+
+Array.some() is supported in all browsers except Internet Explorer 8 or earlier.
+
+============================================= Array.indexOf() =============================================<br>
+The indexOf() method searches an array for an element value and returns its position.<br>
+Note: The first item has position 0, the second item has position 1, and so on.<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.indexOf()</h2>
+
+<p id="demo"></p>
+<script>
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+document.getElementById("demo").innerHTML = "Apple is found in position " + (a + 1);
+</script>
+
+<p>The indexOf() does not work in Internet Explorer 8 and earlier versions.</p>
+</body>
+</html>
+
+Array.indexOf() is supported in all browsers except Internet Explorer 8 or earlier.
+
+Syntax
+
+array.indexOf(item, start)
+item	Required. The item to search for.<br>
+
+start	Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.<br>
+
+Array.indexOf() returns -1 if the item is not found.
+
+If the item is present more than once, it returns the position of the first occurrence.
+
+======================================= Array.lastIndexOf() ======================================<br>
+Array.lastIndexOf() is the same as Array.indexOf(), but searches from the end of the array.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.lastIndexOf()</h2>
+
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Plum", "Pineapple", "Plum", "Pine"];
+var a = fruits.lastIndexOf("Plum");
+document.getElementById("demo").innerHTML = "Apple is found in position " + (a + 1);
+</script>
+
+<p>The lastIndexOf() does not work in Internet Explorer 8 and earlier versions.</p>
+</body>
+</html>
+Array.lastIndexOf() is supported in all browsers except Internet Explorer 8 or earlier.
+
+Syntax
+
+array.lastIndexOf(item, start)
+item	Required. The item to search for,<br>
+start	Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the beginning<br>
+
+================================================= Array.find() ================================================<br>
+The find() method returns the value of the first array element that passes a test function.<br>
+This example finds (returns the value of) the first element that is larger than 18:<br>
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Array.find()</h2>
+<p id="demo"></p>
+<script>
+var numbers = [14, 5, 16, 21, 54, 70];
+var first = numbers.find(myFunction);
+document.getElementById("demo").innerHTML = "First number over 18 is " + first;
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+</body>
+</html>
+
+Note that the function takes 3 arguments:
+
+1. The item value
+2. The item index
+The array itself
+
+Array.find() is not supported in older browsers. The first browser versions with full support is listed below.
+
+==================================================== Array.findIndex() =================================================<br>
+The findIndex() method returns the index of the first array element that passes a test function.
+This example finds the index of the first element that is larger than 18:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array.findIndex()</h2>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.findIndex(myFunction);
+
+document.getElementById("demo").innerHTML = "First number over 18 has index " + first;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+</body>
+</html>
+
+Note that the function takes 3 arguments:
+
+1. The item value
+2. The item index
+3. The array itself
+Array.findIndex() is not supported in older browsers. The first browser versions with full support is listed below.------------>
+
+
